@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css">
-    <title>bcc</title>
+    <link rel="icon" href="/assets/icon.png">
+    <title>Sketches </title>
 </head>
+
 <body>
-    <h1>sup</h1>
+    <Header>
+        <h1>'Sum Sketches</h1>
+        <audio id="player" controls>
+            <source src="" type="audio/mp3">
+        </audio>
+
+        <article id="playingDropdown">
+            <button id="playingDropdownButton">Playing now</button>
+            <div id="nowPlaying" class="menu-flex">
+                <img id="albumPic" alt="current album art" src="https://picsum.photos/25">
+                <article>
+                    <h2 id="artistName"></h1>
+                        <h3 id="trackName">
+                    </h2>
+                    <h5 id="albumName">No track queued!</h3>
+                </article>
+            </div>
+        </article>
+
+        <article id="queueDropdown">
+            <button id="qButton">Queued up</button>
+            <button id="nextTrack">Next track</button>
+            <div id="queueList" class="menu-flex">
+
+            </div>
+        </article>
+    </Header>
+
+
+    <section id="disco"></section>
+
+
 </body>
+
 </html>
 
 <script src="/js/scripts.js"></script>

@@ -1,3 +1,223 @@
+/* top display */
+body {
+    background-color: #f1f3f4;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px 50px; */
+}
+
 h1 {
-    color: yellow;
+    font-size: 50px;
+    margin-top: 0;
+}
+
+
+/* now playing */
+#playingDropdown, #queueDropdown {
+    margin-left: 20px
+}
+
+#nowPlaying, #queuedList {
+    background-color: white;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+#albumPic {
+    height: 100px;
+    width: 100px;
+    margin: 5px 15px;
+}
+
+#artistName, #trackName, #albumName {
+    margin: 0px;
+}
+
+#albumName {
+    margin-top: 10px;
+}
+
+
+/* queueList */
+#queueList {
+    flex-direction: column;
+}
+
+#queueList > button {
+    background-color: white;
+    border: none;
+    border-left: 10px dotted #c1c2c3;
+    cursor: pointer;
+}
+
+#queueList > button:hover {
+    border-bottom: 2px solid #c1c2c3;
+    border-top: 1px solid #c1c2c3;
+}
+
+/* buttons */
+#playingDropdownButton, #qButton {
+    font-size: 30px;
+    font-family: serif;
+    border: none;
+    padding: 5px;
+    background-color: #f1f3f4;
+    cursor: pointer;
+}
+
+#playingDropdownButton:hover, #qButton:hover {
+    background-color: white;
+    color: rgb(0, 217, 255);
+    
+}
+
+#nextTrack {
+    padding: 5px;
+    vertical-align: super;
+    background-color: darkorange;
+}
+
+
+/* toggle */
+.menu-flex {
+    display: flex;
+}
+
+.menu-hide {
+    display: none;
+}
+
+
+
+/* albums */
+#disco {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.disco-item {
+    margin-bottom: 50px;
+    border-top: 3px solid #c1c2c3;
+}
+
+.info-container {
+    display: grid;
+    margin: 10px 0 0 50px;
+    grid-template-columns: 1fr 3fr;
+}
+
+.info-container > img {
+    height: 300px;
+    width: 300px;
+    /* border: 5px double black; */
+}
+
+.info-container > h3 {
+    font-style: italic;
+}
+
+.track-container {
+    margin: 20px 0 20px 50px;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+}
+
+.t-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-bottom: 10px;
+    border: none;
+    background-color: inherit;
+}
+
+.t-row:hover {
+    margin-bottom: 9px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.track-num {
+    color: grey;
+    justify-self: left;
+}
+
+.album-track {
+    justify-self: left;
+}
+
+.track-time {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+
+
+
+
+
+
+
+
+/* player */
+#player {
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    
+}
+
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+    -webkit-user-select: none;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    /* overflow: hidden; */
+    text-align: right;
+    bottom: auto;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    /* The duration is also specified in MediaControlElements.cpp and LayoutTests/media/media-controls.js */
+    transition: opacity 0.3s;
+}
+
+.hide {
+    display:none;
+}
+
+@media screen and (max-width: 1300px) {
+    .info-container > img {
+        height: 200px;
+        width: 200px;
+    }
+    #albumPic {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .info-container > img {
+        height: 150px;
+        width: 150px;
+    }
+    #albumPic {
+        height: 55px;
+        width: 55px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .info-container > h3 {
+        margin-right: 25px;
+    }
 }
