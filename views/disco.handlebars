@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="icon" href="./assets/icon.png">
-    <title>Sketches </title>
-</head>
-
-<body>
+<div>
     <Header>
         <h1>'Sum Sketches</h1>
         <audio id="player" controls>
@@ -22,7 +10,8 @@
             <div id="nowPlaying" class="menu-flex">
                 <img id="albumPic" alt="current album art" src="https://picsum.photos/25">
                 <article>
-                    <h2 id="artistName"></h1>
+                    <h2 id="artistName">
+                        </h1>
                         <h3 id="trackName">
                     </h2>
                     <h5 id="albumName">No track queued!</h3>
@@ -39,12 +28,24 @@
         </article>
     </Header>
 
+    <section id="disco">
+        {{#each data as |album|}}
+        <article class="disco-item">
+            <div class="info-container">
+                <img src="{{album.webLink}}">
+                <h3>{{album.title}}</h3>
+            </div>
+            <div class="track-container">
 
-    <section id="disco"></section>
+                {{#each album.trackList as |song|}}
+                <button type="button" class="t-row">
+                    <span class="track-time">{{song.length}}</span>
+                    <span class="album-track">{{song.track}}</span>
+                </button>
+                {{/each}}
+            </div>
+        </article>
+        {{/each}}
+    </section>
 
-
-</body>
-
-</html>
-
-<script src="/js/scripts.js"></script>
+</div>

@@ -1,12 +1,15 @@
 const router = require('express').Router();
 const path = require('path');
+const songData = require('../data/sketches')
 
-router.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+router.get('/', (req, res) => {
+    res.redirect('/disco');
 })
 
-router.get('/hi', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/landing.html'))
+router.get('/disco', (req, res) => {
+    const data = songData
+    
+    res.render('disco', { data });
 })
 
 module.exports = router;
