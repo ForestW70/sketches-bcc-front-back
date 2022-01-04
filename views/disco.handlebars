@@ -38,14 +38,16 @@
             <div class="track-container">
 
                 {{#each album.trackList as |song|}}
-                <button type="button" class="t-row">
-                    <span class="track-time">{{song.length}}</span>
+                <button type="button" class="t-row" data-ep="{{album.title}}" data-song="{{song.url}}">
+                    <span class="track-num">{{math @index "+" 1}}</span>
                     <span class="album-track">{{song.track}}</span>
+                    <span class="track-time">{{song.length}}</span>
                 </button>
                 {{/each}}
             </div>
         </article>
         {{/each}}
     </section>
-
+    <script src="/js/scripts.js"></script>
+    <script src="/js/queue.js"></script>
 </div>
